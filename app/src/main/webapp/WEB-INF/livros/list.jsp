@@ -8,15 +8,22 @@
 </head>
 <body>
     <h1>Livros</h1>
+    <a href="/livros/insert">Novo Livro</a>
         <table>
             <tr>
                 <th>Id</th>
                 <th>Titulo</th>
+                <th>&nbsp;</th>
             </tr>
             <c:forEach var="l" items="${livros}">
                 <tr>
                     <td>${l.getId()}</td>
                     <td>${l.getTitulo()}</td>
+                    <td>${l.getGenero()}</td>
+                    <td>
+                        <a href="/livros/update/${l.getId()}">Editar</a>
+                        <a href="/livros/delete/${l.getId()}">Excluir</a>
+                    </td>
                 </tr>
             </c:forEach>
         </table>
